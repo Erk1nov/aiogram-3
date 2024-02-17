@@ -1,8 +1,8 @@
-from aiogram import Router, types
+from aiogram import Router, types, F
 
 router = Router()
 
 
-@router.message()
-async def start_user(message: types.Message):
-    await message.answer(message.text)
+@router.callback_query(F.data == "menyu")
+async def start_user(callback: types.CallbackQuery):
+    await callback.message.answer("soz")

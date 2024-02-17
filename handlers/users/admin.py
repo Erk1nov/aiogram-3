@@ -13,7 +13,7 @@ from utils.pgtoexcel import export_to_excel
 router = Router()
 
 
-@router.message(Command('allusers'), IsBotAdminFilter(ADMINS))
+@router.message(Command('allusers'))
 async def get_all_users(message: types.Message):
     users = await db.select_all_users()
 
